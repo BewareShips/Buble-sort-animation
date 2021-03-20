@@ -1,4 +1,5 @@
 const rootDiv = document.querySelector("#root");
+const compareDiv = document.querySelector("#comparisons")
 
 //Generating array of elements
 function generateArray() {
@@ -11,7 +12,7 @@ function generateArray() {
       array_el.classList.add("block");
       //Adding dynamic styling for div
       array_el.style.height = `${value * 3}px`;
-      array_el.style.transform = `translate(${i * 30}px)`;
+      array_el.style.transform = `translate(${i * 32}px)`;
       //Creating a label for showing number of size
       const array_el_label = document.createElement("label");
       array_el_label.classList.add("block-id");
@@ -21,12 +22,20 @@ function generateArray() {
       rootDiv.appendChild(array_el);
    }
 }
+
+// let step = 1
+// console.log(step)
+const Steps = document.createElement("span")
+Steps.innerText = 0
+compareDiv.appendChild((Steps))
+
 //Promise to swap two blocks
 function swap(el1, el2) {
    return new Promise((resolve) => {
       const temp = el1.style.transform;
       el1.style.transform = el2.style.transform;
       el2.style.transform = temp ;
+      Steps.innerText = +Steps.innerText + 1
 
       window.requestAnimationFrame(function () {
          setTimeout(() => {
@@ -36,11 +45,7 @@ function swap(el1, el2) {
       });
    });
 }
-let step = 0
-console.log(step)
-const Steps = document.createElement("span")
-Steps.innerText = step;
-rootDiv.appendChild((Steps))
+
 async function BubleSort(delay = 500) {
    let blocks = document.querySelectorAll(".block");
 
@@ -59,7 +64,7 @@ async function BubleSort(delay = 500) {
             }, delay)
          );
          console.log("run");
-         step+=1
+         
          let value1 = Number(blocks[j].childNodes[0].innerHTML);
          let value2 = Number(blocks[j + 1].childNodes[0].innerHTML);
          //Comparing value of 2 elements
