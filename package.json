@@ -1,0 +1,20 @@
+{
+  "name": "bubble-alg",
+  "version": "1.0.0",
+  "main": "BubleSortAlgorithms.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BewareShips/Buble-sort-animation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BewareShips/Buble-sort-animation/issues"
+  },
+  "homepage": "https://github.com/BewareShips/Buble-sort-animation#readme",
+  "description": ""
+}
