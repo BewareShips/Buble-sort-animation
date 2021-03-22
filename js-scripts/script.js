@@ -1,5 +1,5 @@
 import { GenerateArray } from "./GenerateArray.js";
-import { BubleSortAlgorithm } from "./BubleSortAlgorithms.js";
+import { BubleSortAlgorithm} from "./BubleSortAlgorithms.js";
 import {button} from './BubleSortConstans.js'
 
 const preStart = () =>{
